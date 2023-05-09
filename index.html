@@ -27,8 +27,8 @@
                 <!-- Thumnails Section -->
                 <div class="thumbs">
                     <!-- Buttons -->
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prevImg()"></div>
+                    <div class="next" @click="nextImg()"></div>
                     <!-- Thumbs -->
                     <div v-for="(img, i) in slides" :class="(currentImage===i) ? 'thumb active' : 'thumb'">
                         <img :src="img.image" :alt="img.title" />
