@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            currentImage: 3,
+            currentImage: 0,
+            imgAutoplay: undefined,
             slides: [
                 { image: 'img/01.webp',       title: 'Marvel\'s Spiderman Miles Morale',      text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.' }, 
                 { image: 'img/02.webp',       title: 'Ratchet & Clank: Rift Apart',           text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.' }, 
@@ -24,5 +25,9 @@ createApp({
             this.currentImage--,
             this.currentImage < 0 ? this.currentImage = this.slides.length - 1 : null
         }
+    },
+    mounted() {
+        // Add automatic image scrolling to page init
+        this.imgAutoplay = setInterval(() => this.nextImg(), 1 * 3000)
     }
 }).mount('#app')
