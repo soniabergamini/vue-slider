@@ -37,5 +37,9 @@ createApp({
     mounted() {
         // Add automatic image scrolling to page init
         this.imgAutoScroll()
+    },
+    beforeUnmount() {
+        // Clean the automatic image scrolling before app unmount
+        this.imgAutoScrollOff()
     }
 }).mount('#app')
