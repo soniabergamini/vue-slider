@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
-
 <body>
-
+    <!-- Vue JS App -->
     <div id="app">
-
+        <!-- Carousel Section -->
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
-
+                <!-- Slider Section -->
                 <div class="item">
-                    <img src="img/01.webp" alt="Spiderman" />
+                    <img :src="slides[currentImage]['image']" :alt="slides[currentImage]['title']" />
                     <div class="text">
-                        <h3>Spiderman</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
-                        </p>
+                        <h3>{{slides[currentImage]['title']}}</h3>
+                        <p>{{slides[currentImage]['text']}}</p>
                     </div>
                 </div>
-
+                <!-- Thumnails Section -->
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
@@ -48,14 +44,11 @@
                         <img src="img/05.webp" alt="Avengers" />
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
-    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <!-- Script JS -->
+    <script src='./js/vue.3.2.47.js'></script>
     <script src="./js/script.js"></script>
 </body>
-
 </html>
