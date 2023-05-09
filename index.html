@@ -15,7 +15,7 @@
     <div id="app">
         <!-- Carousel Section -->
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseover="imgAutoScrollOff()" @mouseleave="imgAutoScroll()">
                 <!-- Slider Section -->
                 <div class="item">
                     <img :src="slides[currentImage]['image']" :alt="slides[currentImage]['title']" />
@@ -30,7 +30,7 @@
                     <div class="prev" @click="prevImg()"></div>
                     <div class="next" @click="nextImg()"></div>
                     <!-- Thumbs -->
-                    <div v-for="(img, i) in slides" :class="(currentImage===i) ? 'thumb active' : 'thumb'" @click="currentImage=i" >
+                    <div v-for="(img, i) in slides" :class="(currentImage===i) ? 'thumb active' : 'thumb'" @click="currentImage=i">
                         <img :src="img.image" :alt="img.title" />
                     </div>
                 </div>

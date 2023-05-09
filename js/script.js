@@ -24,10 +24,16 @@ createApp({
         prevImg() {
             this.currentImage--,
             this.currentImage < 0 ? this.currentImage = this.slides.length - 1 : null
+        },
+        imgAutoScroll() {
+            this.imgAutoplay = setInterval(() => this.nextImg(), 1 * 3000)
+        },
+        imgAutoScrollOff() {
+            clearInterval(this.imgAutoplay)
         }
     },
     mounted() {
         // Add automatic image scrolling to page init
-        this.imgAutoplay = setInterval(() => this.nextImg(), 1 * 3000)
+        this.imgAutoScroll()
     }
 }).mount('#app')

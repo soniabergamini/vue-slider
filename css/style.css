@@ -43,6 +43,11 @@
 .thumb {
     height: calc((300px) / 5);
     opacity: 0.5;
+    cursor: pointer;
+}
+
+.thumb:hover {
+    opacity: 1;
 }
 
 .thumb img {
