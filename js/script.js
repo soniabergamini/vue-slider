@@ -25,9 +25,11 @@ createApp({
             this.currentImage--,
             this.currentImage < 0 ? this.currentImage = this.slides.length - 1 : null
         },
+        // Set automatic image scrolling
         imgAutoScroll() {
             this.imgAutoplay = setInterval(() => this.nextImg(), 1 * 3000)
         },
+        // Turns off automatic image scrolling
         imgAutoScrollOff() {
             clearInterval(this.imgAutoplay)
         }
