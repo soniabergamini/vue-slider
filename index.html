@@ -14,8 +14,8 @@
     <!-- Vue JS App -->
     <div id="app">
         <!-- Carousel Section -->
-        <div class="container">
-            <div class="slider-wrapper" tabindex="0" @mouseover="imgAutoScrollOff()" @mouseleave="imgAutoScroll()">
+        <div class="container" tabindex="0" @keyup.up="prevImg()" @keyup.down="nextImg()">
+            <div class="slider-wrapper" tabindex="1" @mouseover="imgAutoScrollOff()" @mouseleave="imgAutoScroll()">
                 <!-- Slider Section -->
                 <div class="item">
                     <img :src="slides[currentImage]['image']" :alt="slides[currentImage]['title']" />
